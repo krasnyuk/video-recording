@@ -44,7 +44,12 @@ const nonTreeShakableModules = [
     'bootstrap-select/dist/js/bootstrap-select.js',
     'bootstrap-datepicker/dist/css/bootstrap-datepicker3.css',
     'font-awesome/css/font-awesome.css',
-    './ClientApp/app/styles-external.css'
+    './ClientApp/app/styles-external.css',
+    'video.js/dist/video-js.min.css',
+    'video.js/dist/video.min.js',
+    'recordrtc/RecordRTC.js',
+    'videojs-record/dist/videojs.record.js',
+    'videojs-record/dist/css/videojs.record.css'
 ];
 const allModules = treeShakableModules.concat(nonTreeShakableModules);
 
