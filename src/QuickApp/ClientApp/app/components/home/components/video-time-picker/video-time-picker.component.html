@@ -1,0 +1,10 @@
+<mat-card class="app-card">
+    <mat-card-header>
+        <mat-card-title>Video duration time</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-radio-group class="time-radio-group" [(ngModel)]="selectedTime">
+            <mat-radio-button *ngFor="let time of timeConfigs" class="time-radio-button" [value]="time">{{time}}</mat-radio-button>
+        </mat-radio-group>
+    </mat-card-content>
+</mat-card>

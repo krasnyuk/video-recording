@@ -1,82 +1,84 @@
 <div id="app_container" class="{{configurations.theme | lowercase}}-theme">
     <ng2-toasty></ng2-toasty>
     <div class="container-fluid">
-        <nav id="header" class="app-component navbar navbar-inner navbar-fixed-top">
-            <nav class="container">
-                <div class="navbar-header">
-                    <button type="button" class="app-component navbar-toggle collapsed" data-toggle="collapse"
-                            data-target=".menuItemsContainer.app-component" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="app-component navbar-brand" routerLink="/">
-                        <img [src]="appLogo" alt="logo">
-                        <span class="app-component appTitle">{{appTitle}}</span>
-                    </a>
-                </div>
-                <div *ngIf="!isUserLoggedIn" class="app-component collapse navbar-collapse menuItemsContainer">
-                    <ul class="app-component nav navbar-nav nav-pills navBarPadding">
-                        <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-                        <li routerLinkActive="active"><a routerLink="/about">{{'mainMenu.About' | translate}}</a></li>
-                        <li routerLinkActive="active"><a routerLink="/terms">Terms</a></li>
-                        <li routerLinkActive="active"><a routerLink="/privacy">Privacy</a></li>
-                        <li routerLinkActive="active"><a routerLink="/contact">Contact</a></li>
-                    </ul>
-                    <ul class="app-component nav navbar-nav nav-pills navBarPadding navbar-right">
-                        <li>
-                            <a href="javascript:;">
-                                <span class="glyphicon glyphicon-log-in"></span> {{'mainMenu.Login' | translate}}
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:;">
-                                <span class="glyphicon glyphicon-user"></span> {{'mainMenu.Signup' | translate}}
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div *ngIf="isUserLoggedIn" class="app-component collapse navbar-collapse menuItemsContainer">
-                    <ul class="app-component nav navbar-nav nav-pills navBarPadding">
-                        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink=""><span
-                                class="glyphicon glyphicon-home"></span></a></li>
-                        <li routerLinkActive="active" *ngIf="canViewCustomers"><a routerLink="/customers">{{'mainMenu.Customers'
-                            | translate}}</a></li>
-                        <li routerLinkActive="active" *ngIf="canViewProducts"><a routerLink="/products">{{'mainMenu.Products'
-                            | translate}}</a></li>
-                        <li routerLinkActive="active" *ngIf="canViewOrders"><a routerLink="/orders">{{'mainMenu.Orders'
-                            | translate}}</a></li>
-                        <li routerLinkActive="active"><a routerLink="/about">{{'mainMenu.About' | translate}}</a></li>
-                    </ul>
-                    <ul class="app-component nav navbar-nav nav-pills navBarPadding navbar-right">
-                        <li (click)="logout()"><a href="javascript:;"><span class="glyphicon glyphicon-log-out"></span>
-                            {{'mainMenu.Logout' | translate}}</a></li>
-                    </ul>
-                    <p class="app-component navbar-text navbar-right notifications-popup">
-                        {{'app.Welcome' | translate}}
-                        <a class="app-component navbar-link user-name" [popover]="popTemplate"
-                           (onHidden)="markNotificationsAsRead()" placement="bottom" [popoverTitle]="notificationsTitle"
-                           href="javascript:;" triggers="focus">
-                            {{userName}}
-                            <span *ngIf="newNotificationCount > 0" class="badge">{{newNotificationCount}}</span>
-                        </a>,
-                    </p>
+        <app-navbar></app-navbar>
+        <!--<nav id="header" class="app-component navbar navbar-inner navbar-fixed-top">-->
+            <!--&lt;!&ndash;<nav class="container">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="navbar-header">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button type="button" class="app-component navbar-toggle collapsed" data-toggle="collapse"&ndash;&gt;-->
+            <!--&lt;!&ndash;data-target=".menuItemsContainer.app-component" aria-expanded="false">&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="sr-only">Toggle navigation</span>&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="icon-bar"></span>&ndash;&gt;-->
+            <!--&lt;!&ndash;</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="app-component navbar-brand" routerLink="/">&ndash;&gt;-->
+            <!--&lt;!&ndash;<img [src]="appLogo" alt="logo">&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="app-component appTitle">{{appTitle}}</span>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div *ngIf="!isUserLoggedIn" class="app-component collapse navbar-collapse menuItemsContainer">&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="app-component nav navbar-nav nav-pills navBarPadding">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active"><a mat-button routerLink="/home">Home</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active"><a routerLink="/about">{{'mainMenu.About' | translate}}</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active"><a routerLink="/terms">Terms</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active"><a routerLink="/privacy">Privacy</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active"><a routerLink="/contact">Contact</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="app-component nav navbar-nav nav-pills navBarPadding navbar-right">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="javascript:;">&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="glyphicon glyphicon-log-in"></span> {{'mainMenu.Login' | translate}}&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a href="javascript:;">&ndash;&gt;-->
+            <!--&lt;!&ndash;<span class="glyphicon glyphicon-user"></span> {{'mainMenu.Signup' | translate}}&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<div *ngIf="isUserLoggedIn" class="app-component collapse navbar-collapse menuItemsContainer">&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="app-component nav navbar-nav nav-pills navBarPadding">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink=""><span&ndash;&gt;-->
+            <!--&lt;!&ndash;class="glyphicon glyphicon-home"></span></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active" *ngIf="canViewCustomers"><a routerLink="/customers">{{'mainMenu.Customers'&ndash;&gt;-->
+            <!--&lt;!&ndash;| translate}}</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active" *ngIf="canViewProducts"><a routerLink="/products">{{'mainMenu.Products'&ndash;&gt;-->
+            <!--&lt;!&ndash;| translate}}</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active" *ngIf="canViewOrders"><a routerLink="/orders">{{'mainMenu.Orders'&ndash;&gt;-->
+            <!--&lt;!&ndash;| translate}}</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active"><a routerLink="/about">{{'mainMenu.About' | translate}}</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;<ul class="app-component nav navbar-nav nav-pills navBarPadding navbar-right">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li (click)="logout()"><a href="javascript:;"><span class="glyphicon glyphicon-log-out"></span>&ndash;&gt;-->
+            <!--&lt;!&ndash;{{'mainMenu.Logout' | translate}}</a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p class="app-component navbar-text navbar-right notifications-popup">&ndash;&gt;-->
+            <!--&lt;!&ndash;{{'app.Welcome' | translate}}&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="app-component navbar-link user-name" [popover]="popTemplate"&ndash;&gt;-->
+            <!--&lt;!&ndash;(onHidden)="markNotificationsAsRead()" placement="bottom" [popoverTitle]="notificationsTitle"&ndash;&gt;-->
+            <!--&lt;!&ndash;href="javascript:;" triggers="focus">&ndash;&gt;-->
+            <!--&lt;!&ndash;{{userName}}&ndash;&gt;-->
+            <!--&lt;!&ndash;<span *ngIf="newNotificationCount > 0" class="badge">{{newNotificationCount}}</span>&ndash;&gt;-->
+            <!--&lt;!&ndash;</a>,&ndash;&gt;-->
+            <!--&lt;!&ndash;</p>&ndash;&gt;-->
 
-                    <ng-template #popTemplate>
-                        <notifications-viewer [isViewOnly]="true"></notifications-viewer>
-                    </ng-template>
+            <!--&lt;!&ndash;<ng-template #popTemplate>&ndash;&gt;-->
+            <!--&lt;!&ndash;<notifications-viewer [isViewOnly]="true"></notifications-viewer>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
 
 
-                    <ul class="app-component nav navbar-nav nav-pills navBarPadding navbar-right">
-                        <li routerLinkActive="active"><a routerLink="/settings"><span
-                                class="glyphicon glyphicon-cog"></span></a></li>
-                    </ul>
-                </div>
-            </nav>
-        </nav>
+            <!--&lt;!&ndash;<ul class="app-component nav navbar-nav nav-pills navBarPadding navbar-right">&ndash;&gt;-->
+            <!--&lt;!&ndash;<li routerLinkActive="active"><a routerLink="/settings"><span&ndash;&gt;-->
+            <!--&lt;!&ndash;class="glyphicon glyphicon-cog"></span></a></li>&ndash;&gt;-->
+            <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</nav>&ndash;&gt;-->
+            <!---->
+        <!--</nav>-->
 
-        <div id="mainContent" class="app-component">
+        <div id="mainContent" class="main-content">
             <router-outlet></router-outlet>
         </div>
 

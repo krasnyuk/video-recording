@@ -1,6 +1,7 @@
 ﻿@import './assets/styles/ngx-datatable.css';
 @import './assets/styles/alertify.core.css';
 @import './assets/styles/alertify.bootstrap.css';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 .navbar .nav li a:hover,
 .navbar.nav li.toolbaritem a:hover,
@@ -314,4 +315,8 @@ i.page-caption {
 
 .inline-block {
     display: inline-block;
+}
+
+.app-card {
+    margin-bottom: 20px;
 }
