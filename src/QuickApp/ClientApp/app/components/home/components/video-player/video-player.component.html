@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-xs-12">
         <button mat-raised-button color="primary" (click)="startRecording()"> Record </button>
-        <button mat-raised-button (click) ="stopRecording()"> Stop</button>
-        <button mat-raised-button (click)="download()"> Download</button>
+        <button mat-raised-button [disabled]="!isRecording" (click) ="stopRecording()"> Stop</button>
+        <button mat-raised-button [disabled]="!isRecorded" (click)="downloadVideo()"> Download</button>
     </div>
 </div>

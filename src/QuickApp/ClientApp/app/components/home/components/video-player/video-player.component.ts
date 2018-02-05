@@ -9,8 +9,21 @@ import * as RecordRTC from 'recordrtc';
 
 export class VideoPlayerComponent implements OnInit, AfterViewInit {
 
+    public isRecording: boolean = false;
+    public isRecorded: boolean = false;
     private stream: MediaStream;
     private recordRTC: any;
+    private fileTitle: string = 'you-pitch-video';
+    private fileExtension: string = 'mp4';
+    private mediaConstraints: MediaStreamConstraints = {
+        video: {
+            advanced: [{
+                width: 1920,
+                height: 1080,
+                aspectRatio: 1.77
+            }]
+        }, audio: true
+    };
 
     @ViewChild('video') video;
 
@@ -41,54 +54,55 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
     public successCallback(stream: MediaStream): void {
         const options = {
             mimeType: 'video/webm\;codecs=vp8', // or video/webm\;codecs=h264 or video/webm\;codecs=vp9
-            bitsPerSecond: 512000 // if this line is provided, skip above two
+            bitsPerSecond: 512000
         };
         this.stream = stream;
         this.recordRTC = RecordRTC(stream, options);
+        // start of recording video
         this.recordRTC.startRecording();
+        this.isRecording = true;
+        // showing video stream as html element
         let video: HTMLVideoElement = this.video.nativeElement;
         video.src = window.URL.createObjectURL(stream);
+        // hiding video element controls while recording
         this.toggleControls();
     }
 
     public errorCallback(): void {
-        //handle error here
+        // callback if user is not approved recording browser functions
     }
 
     public processVideo(audioVideoWebMURL): void {
         let video: HTMLVideoElement = this.video.nativeElement;
-        let recordRTC = this.recordRTC;
+        // let recordRTC = this.recordRTC;
+        // show recorded result in video html element
         video.src = audioVideoWebMURL;
+        // show video controls
         this.toggleControls();
-        let recordedBlob = recordRTC.getBlob();
-        recordRTC.getDataURL(function (dataURL) {
+        let recordedBlob = this.recordRTC.getBlob();
+        // let blob = new Blob([recordedBlob], {type: 'video/mp4'});
+        // debugger;
+        this.recordRTC.getDataURL(function (dataURL) {
             // video.src = dataURL;
         });
     }
 
     public startRecording(): void {
-        let mediaConstraints: MediaStreamConstraints = {
-            video: {
-                advanced: [{
-                    width: 1920,
-                    height: 1080,
-                    aspectRatio: 1.77
-                }]
-            }, audio: true
-        };
-        navigator.mediaDevices.getUserMedia(mediaConstraints)
-            .then(this.successCallback.bind(this), this.errorCallback.bind(this));
+        // requesting approve for using camera and microphone
+        navigator.mediaDevices.getUserMedia(this.mediaConstraints).then(this.successCallback.bind(this), this.errorCallback.bind(this));
     }
 
     public stopRecording(): void {
-        let recordRTC = this.recordRTC;
-        recordRTC.stopRecording(this.processVideo.bind(this));
-        let stream = this.stream;
-        stream.getAudioTracks().forEach(track => track.stop());
-        stream.getVideoTracks().forEach(track => track.stop());
+        // process video after stop recording
+        this.recordRTC.stopRecording(this.processVideo.bind(this));
+        // stop streams
+        this.stream.getAudioTracks().forEach(track => track.stop());
+        this.stream.getVideoTracks().forEach(track => track.stop());
+        this.isRecording = false;
+        this.isRecorded = true;
     }
 
-    public download(): void {
-        this.recordRTC.save('video.webm');
+    public downloadVideo(): void {
+        this.recordRTC.save(this.fileTitle + '.' + this.fileExtension);
     }
 }
