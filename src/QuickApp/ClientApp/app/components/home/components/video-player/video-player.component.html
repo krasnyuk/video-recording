@@ -4,9 +4,9 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 video-buttons-wrapper">
         <button mat-raised-button color="primary" (click)="startRecording()"> Record </button>
         <button mat-raised-button [disabled]="!isRecording" (click) ="stopRecording()"> Stop</button>
-        <button mat-raised-button [disabled]="!isRecorded" (click)="downloadVideo()"> Download</button>
+        <button mat-raised-button [disabled]="!isRecorded || isRecording" (click)="downloadVideo()"> Download</button>
     </div>
 </div>
