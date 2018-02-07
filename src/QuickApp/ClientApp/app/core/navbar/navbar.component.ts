@@ -7,6 +7,11 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class NavbarComponent implements OnInit {
+
+    public languages = [
+        {value: 'EN', viewValue: 'English'},
+        {value: 'PT', viewValue: 'Portugalian'},
+    ];
     constructor() {
     }
 

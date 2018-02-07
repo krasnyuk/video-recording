@@ -15,34 +15,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="video-player.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="101" column="31" lean-forward="false" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#74#0" expanded="true" />
-                <element signature="e#619#799#0" expanded="false" />
-                <element signature="n#!!block;n#setInitialState#0;n#VideoPlayerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#toggleControls#0;n#VideoPlayerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#successCallback#0;n#VideoPlayerComponent#0" expanded="false" />
-                <element signature="e#1456#1605#0" expanded="false" />
-                <element signature="n#!!block;n#errorCallback#0;n#VideoPlayerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#processVideo#0;n#VideoPlayerComponent#0" expanded="false" />
-                <element signature="n#!!block;n#startRecording#0;n#VideoPlayerComponent#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
-              <folding>
-                <marker date="1517862362016" expanded="false" signature="6888:6905" ph="..." />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,11 +35,25 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="video-player.component.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="889">
+              <caret line="65" column="47" lean-forward="false" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
+              <folding>
+                <element signature="e#0#88#0" expanded="true" />
+                <element signature="e#633#813#0" expanded="false" />
+                <element signature="n#!!block;n#errorCallback#0;n#VideoPlayerComponent#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="video-player.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+            <state relative-caret-position="0">
+              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -70,18 +62,8 @@
       <file leaf-file-name="video-player.component.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="webpack.config.vendor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/QuickApp/webpack.config.vendor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="53" column="68" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="68" />
+            <state relative-caret-position="221">
+              <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -110,6 +92,8 @@
       <find>record</find>
       <find>blob</find>
       <find>boots</find>
+      <find>body</find>
+      <find>backgroun</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,21 +117,21 @@
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/shared/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/shared/navbar/navbar.component.scss" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/shared/navbar/navbar.component.html" />
-        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.ts" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.scss" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/app.component.scss" />
-        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.html" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-time-picker/video-time-picker.component.scss" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-time-picker/video-time-picker.component.ts" />
-        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/styles.scss" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-time-picker/video-time-picker.component.html" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.html" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.scss" />
-        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.ts" />
-        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.html" />
-        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.scss" />
         <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/app.component.html" />
+        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.ts" />
+        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.html" />
+        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.scss" />
+        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/styles.scss" />
+        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.html" />
+        <option value="$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.ts" />
       </list>
     </option>
   </component>
@@ -181,6 +165,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -256,12 +242,27 @@
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="video-player" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="video-recording" type="b2602c69:ProjectViewProjectNode" />
+              <item name="video-recording" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="QuickApp" type="462c0819:PsiDirectoryNode" />
+              <item name="ClientApp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="not-found" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="video-recording" type="b2602c69:ProjectViewProjectNode" />
+              <item name="video-recording" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="QuickApp" type="462c0819:PsiDirectoryNode" />
+              <item name="wwwroot" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -312,12 +313,13 @@
       <workItem from="1516548022319" duration="12139000" />
       <workItem from="1516612554075" duration="17000" />
       <workItem from="1517852121007" duration="6195000" />
-      <workItem from="1517859503091" duration="2861000" />
+      <workItem from="1517859503091" duration="6800000" />
+      <workItem from="1518029906056" duration="3729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60609000" />
+    <option name="totallyTimeSpent" value="68277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -337,11 +339,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14783822" sideWeight="0.50506973" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14783822" sideWeight="0.4949303" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22315203" sideWeight="0.4949303" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -527,37 +529,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="38" lean-forward="false" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-time-picker/video-time-picker.component.scss" />
     <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-time-picker/video-time-picker.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/styles.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="319" column="9" lean-forward="false" selection-start-line="319" selection-start-column="1" selection-end-line="319" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-time-picker/video-time-picker.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="100" column="22" lean-forward="false" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/QuickApp/Views/Home/Index.cshtml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -604,6 +578,97 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="53" column="68" lean-forward="false" selection-start-line="53" selection-start-column="46" selection-end-line="53" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="89" column="21" lean-forward="true" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#53#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/core/navbar/navbar.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="61" lean-forward="false" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="3" column="8" lean-forward="false" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/app.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="17" lean-forward="false" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/styles.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" lean-forward="false" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2676">
+          <caret line="11469" column="10" lean-forward="false" selection-start-line="11469" selection-start-column="10" selection-end-line="11469" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -624,94 +689,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es6.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="6094" column="12" lean-forward="false" selection-start-line="6094" selection-start-column="12" selection-end-line="6094" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/home.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/home/components/video-player/video-player.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="101" column="31" lean-forward="false" selection-start-line="101" selection-start-column="31" selection-end-line="101" selection-end-column="31" />
+        <state relative-caret-position="889">
+          <caret line="65" column="47" lean-forward="false" selection-start-line="65" selection-start-column="47" selection-end-line="65" selection-end-column="47" />
           <folding>
-            <element signature="e#0#74#0" expanded="true" />
-            <element signature="e#619#799#0" expanded="false" />
-            <element signature="n#!!block;n#setInitialState#0;n#VideoPlayerComponent#0" expanded="false" />
-            <element signature="n#!!block;n#toggleControls#0;n#VideoPlayerComponent#0" expanded="false" />
-            <element signature="n#!!block;n#successCallback#0;n#VideoPlayerComponent#0" expanded="false" />
-            <element signature="e#1456#1605#0" expanded="false" />
+            <element signature="e#0#88#0" expanded="true" />
+            <element signature="e#633#813#0" expanded="false" />
             <element signature="n#!!block;n#errorCallback#0;n#VideoPlayerComponent#0" expanded="false" />
-            <element signature="n#!!block;n#processVideo#0;n#VideoPlayerComponent#0" expanded="false" />
-            <element signature="n#!!block;n#startRecording#0;n#VideoPlayerComponent#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/app.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="39" column="10" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/QuickApp/ClientApp/app/components/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="96" column="25" lean-forward="true" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
-          <folding>
-            <marker date="1517862362016" expanded="false" signature="6888:6905" ph="..." />
           </folding>
         </state>
       </provider>

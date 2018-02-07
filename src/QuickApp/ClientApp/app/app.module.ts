@@ -65,6 +65,7 @@ import {NavbarComponent} from './core/navbar/navbar.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
     imports: [
@@ -91,7 +92,8 @@ import {MatChipsModule} from '@angular/material/chips';
         MatButtonModule,
         MatRadioModule,
         MatCardModule,
-        MatChipsModule
+        MatChipsModule,
+        MatSelectModule
     ],
     declarations: [
         AppComponent,

@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit, ViewChild} from '@angular/core';
 import * as RecordRTC from 'recordrtc';
 
 @Component({
@@ -25,30 +25,32 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
         }, audio: true
     };
 
-    @ViewChild('video') video;
+    @ViewChild('video') public video;
+    public videoElement: HTMLVideoElement;
 
     constructor() {
+
     }
 
     ngOnInit() {
     }
 
     ngAfterViewInit() {
+        // reference to video html element
+        this.videoElement = this.video.nativeElement;
         this.setInitialState();
     }
 
     private setInitialState(): void {
-        let video: HTMLVideoElement = this.video.nativeElement;
-        video.muted = false;
-        video.controls = true;
-        video.autoplay = false;
+        this.videoElement.muted = false;
+        this.videoElement.controls = false;
+        this.videoElement.autoplay = false;
     }
 
     public toggleControls(): void {
-        let video: HTMLVideoElement = this.video.nativeElement;
-        video.muted = !video.muted;
-        video.controls = !video.controls;
-        video.autoplay = !video.autoplay;
+        this.videoElement.muted = !this.videoElement.muted;
+        this.videoElement.controls = !this.videoElement.controls;
+        this.videoElement.autoplay = !this.videoElement.autoplay;
     }
 
     public successCallback(stream: MediaStream): void {
@@ -62,8 +64,7 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
         this.recordRTC.startRecording();
         this.isRecording = true;
         // showing video stream as html element
-        let video: HTMLVideoElement = this.video.nativeElement;
-        video.src = window.URL.createObjectURL(stream);
+        this.videoElement.src = window.URL.createObjectURL(stream);
         // hiding video element controls while recording
         this.toggleControls();
     }
@@ -73,23 +74,37 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
     }
 
     public processVideo(audioVideoWebMURL): void {
-        let video: HTMLVideoElement = this.video.nativeElement;
         // let recordRTC = this.recordRTC;
         // show recorded result in video html element
-        video.src = audioVideoWebMURL;
+        this.videoElement.src = audioVideoWebMURL;
+        this.videoElement.muted = false;
         // show video controls
-        this.toggleControls();
+        //this.toggleControls();
         let recordedBlob = this.recordRTC.getBlob();
         // let blob = new Blob([recordedBlob], {type: 'video/mp4'});
-        // debugger;
         this.recordRTC.getDataURL(function (dataURL) {
             // video.src = dataURL;
         });
     }
 
     public startRecording(): void {
-        // requesting approve for using camera and microphone
         navigator.mediaDevices.getUserMedia(this.mediaConstraints).then(this.successCallback.bind(this), this.errorCallback.bind(this));
+    }
+
+    public pauseRecording(): void {
+        this.recordRTC.pauseRecording();
+        this.videoElement.pause();
+    }
+
+    public resumeRecording(): void {
+        this.recordRTC.resumeRecording();
+        this.videoElement.play();
+    }
+
+    public onPauseToggle() {
+        if (this.isRecording) {
+            this.videoElement.paused ? this.pauseRecording() : this.resumeRecording();
+        }
     }
 
     public stopRecording(): void {
