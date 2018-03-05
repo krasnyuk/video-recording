@@ -1,28 +1,32 @@
 <div class="home-content">
     <div class="row">
         <!-- Ads section-->
-        <div class="col-md-3">
+        <div class="col-md-3 col-xs-12">
             <mat-card>Ads content</mat-card>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 col-xs-12">
             <video-player></video-player>
         </div>
-        <div class="col-md-3">
-            <app-video-time-picker></app-video-time-picker>
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Categories</mat-card-title>
-                </mat-card-header>
-                <mat-card-content>
-                    <mat-chip-list>
-                        <mat-chip class="category-chip">Animals</mat-chip>
-                        <mat-chip class="category-chip">Cars</mat-chip>
-                        <mat-chip class="category-chip" color="primary" selected="true">Sports</mat-chip>
-                        <mat-chip class="category-chip">Trips</mat-chip>
-                        <mat-chip class="category-chip">Vacation</mat-chip>
-                    </mat-chip-list>
-                </mat-card-content>
-            </mat-card>
+        <div class="col-md-3 col-xs-12">
+            <div class="col-md-12 col-xs-6">
+                <app-video-time-picker></app-video-time-picker>
+            </div>
+            <div class="col-md-12 col-xs-6">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title>Categories</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-chip-list>
+                            <mat-chip class="category-chip">Animals</mat-chip>
+                            <mat-chip class="category-chip">Cars</mat-chip>
+                            <mat-chip class="category-chip" color="primary" selected="true">Sports</mat-chip>
+                            <mat-chip class="category-chip">Trips</mat-chip>
+                            <mat-chip class="category-chip">Vacation</mat-chip>
+                        </mat-chip-list>
+                    </mat-card-content>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>

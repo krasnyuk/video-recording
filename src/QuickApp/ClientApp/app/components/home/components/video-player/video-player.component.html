@@ -1,10 +1,31 @@
 <div class="row">
     <div class="col-xs-12">
         <div class="video-container">
-            <video #video class="video" (pause)="onPauseToggle()" (play)="onPauseToggle()"></video>
-            <div class="player-buttons">
-                <button (click)="startRecording()" [ngClass]="{'hidden': isRecording || isRecorded}"
+            <video #video class="video" (ended)="isPaused = true" (pause)="onPauseToggle()"
+                   (play)="onPauseToggle()"></video>
+            <div *ngIf="showNewVideoButton && !showTimerCaption" class="start-recording-button-wrapper">
+                <button (click)="startRecording()"
                         class="start-recording-button" mat-fab color="warn">Pitch!
+                </button>
+            </div>
+            <div *ngIf="showTimerCaption" class="timer-wrapper">
+                <span class="pitch-timer">{{timerCaption}}</span>
+            </div>
+            <div *ngIf="isPaused" class="video-result-buttons-wrapper">
+                <button [disabled]="recorderState === 'stopped'" (click)="resumeRecording()" class="results-button" mat-raised-button>
+                    <i class="fa fa-forward"></i> Resume
+                </button>
+                <button (click)="watchVideo()" class="results-button" mat-raised-button>
+                    <i class="fa fa-play"></i> Watch
+                </button>
+                <button (click)="resetRecording()" class="results-button" mat-raised-button>
+                    <i class="fa fa-undo"></i> Take another Pitch!
+                </button>
+                <button class="results-button" mat-raised-button (click)="downloadVideo()">
+                    <i class="fa fa-download"></i> Download
+                </button>
+                <button class="results-button" mat-raised-button>
+                    <i class="fa fa-share-alt"></i> Share
                 </button>
             </div>
         </div>
@@ -12,7 +33,6 @@
 </div>
 <div class="row">
     <div class="col-xs-12 video-buttons-wrapper">
-        <button mat-raised-button [ngClass]="{'hidden': !isRecording || isRecorded}" [disabled]="!isRecording" (click)="stopRecording()"> Stop</button>
-        <button mat-raised-button [disabled]="!isRecorded || isRecording" (click)="downloadVideo()"> Download</button>
+
     </div>
 </div>
