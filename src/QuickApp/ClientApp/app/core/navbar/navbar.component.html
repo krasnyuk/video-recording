@@ -2,12 +2,20 @@
     <button mat-button class="docs-button" routerLink="/" aria-label="Angular Material">
         <img class="logo" src="../../assets/images/logo.png" alt="angular">
     </button>
-    <button mat-button routerLink="/home">Home</button>
-    <button mat-button routerLink="/about">
-        {{'mainMenu.About' | translate}}
-    </button>
-    <button mat-button routerLink="/terms">Terms</button>
-    <button mat-button routerLink="/privacy">Privacy</button>
-    <button mat-button routerLink="/contact">Contact</button>
-
+    <button mat-button routerLink="/home">{{'navbar.Home' | translate}}</button>
+    <button mat-button routerLink="/about">{{'navbar.About' | translate}}</button>
+    <button mat-button routerLink="/terms">{{'navbar.Terms' | translate}}</button>
+    <button mat-button routerLink="/privacy">{{'navbar.Privacy' | translate}}</button>
+    <button mat-button routerLink="/contact">{{'navbar.Contact' | translate}}</button>
+    <div class="dropdown language-dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+           aria-expanded="false">
+            {{'navbar.Language' | translate}} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li *ngFor="let lang of languages">
+                <a (click)="languageChange(lang.value)" href="#">{{lang.viewValue}}</a>
+            </li>
+        </ul>
+    </div>
 </nav>

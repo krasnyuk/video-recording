@@ -1,4 +1,13 @@
 ﻿{
+  "navbar": {
+    "Home": "Home",
+    "About": "About",
+    "Terms": "Terms",
+    "Privacy": "Privacy",
+    "Contact": "Contact",
+    "Language": "Language"
+  },
+
   "app": {
     "Welcome": "Welcome",
     "Notifications": "Notifications",

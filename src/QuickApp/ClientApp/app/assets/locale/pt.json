@@ -1,4 +1,12 @@
 ﻿{
+  "navbar": {
+    "Home": "Casa",
+    "About": "Sobre",
+    "Terms": "Termos",
+    "Privacy": "Privacidade",
+    "Contact": "Contato",
+    "Language": "Língua"
+  },
   "app": {
     "Welcome": "Bem-vindo!",
     "Notifications": "Notificações",

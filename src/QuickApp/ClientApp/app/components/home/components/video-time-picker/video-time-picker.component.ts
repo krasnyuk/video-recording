@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {VideoPlayerSettingsService} from '../../../../services/video-player-settings.service';
 
 
 @Component({
@@ -7,14 +8,27 @@ import { Component } from '@angular/core';
     styleUrls: ['./video-time-picker.component.scss']
 })
 export class VideoTimePickerComponent {
-    public selectedTime: string;
+    public selectedDuration: number | null;
 
-    public timeConfigs: Array<string> = [
-        '1 minute',
-        '2 minutes',
-        'Other'
+    public timeConfig: Array<any> = [
+        {
+            caption: '1 minute',
+            value: 60000
+        },
+        {
+            caption: '3 minutes',
+            value: 180000
+        },
+        {
+            caption: 'Other',
+            value: null
+        }
     ];
 
-    constructor() {
+    constructor(private videoPlayerSettingsService: VideoPlayerSettingsService) {
+    }
+
+    public onDurationChange() {
+        this.videoPlayerSettingsService.setVideoDurationLimit(this.selectedDuration);
     }
 }

@@ -1,5 +1,6 @@
-import {AfterViewInit, Component, HostListener, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, OnInit, ViewChild} from '@angular/core';
 import * as RecordRTC from 'recordrtc';
+import {VideoPlayerSettingsService} from '../../../../services/video-player-settings.service';
 
 enum RecorderState {
     recording = 'recording',
@@ -22,6 +23,7 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
     public showTimerCaption: boolean = false;
     public timerCaption: string = '';
     public recorderState: RecorderState;
+    public videoElement: HTMLVideoElement;
     private timerCaptionsArray: Array<string> = ['3', '2', '1', 'Pitch!'];
     private stream: MediaStream;
     private recordRTC: any;
@@ -37,14 +39,16 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
         }, audio: true
     };
 
+    public timeLimit: number | null;
     @ViewChild('video') public video;
-    public videoElement: HTMLVideoElement;
 
-    constructor() {
-
+    constructor(private videoPlayerSettingsService: VideoPlayerSettingsService) {
     }
 
     ngOnInit() {
+        this.videoPlayerSettingsService.videoDurations$.subscribe((newVideoDurationLimit) => {
+            this.timeLimit = newVideoDurationLimit;
+        });
     }
 
     ngAfterViewInit() {
@@ -59,42 +63,52 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
         this.videoElement.autoplay = false;
     }
 
-    public toggleControls(): void {
+    private toggleControls(): void {
         this.videoElement.muted = !this.videoElement.muted;
         this.videoElement.controls = !this.videoElement.controls;
         this.videoElement.autoplay = !this.videoElement.autoplay;
     }
 
-    public successCallback(stream: MediaStream): void {
+    private successCallback(stream: MediaStream): void {
+        const options = {
+            mimeType: 'video/webm\;codecs=vp8', // or video/webm\;codecs=h264 or video/webm\;codecs=vp9
+            bitsPerSecond: 512000
+        };
+        this.stream = stream;
+        this.recordRTC = RecordRTC(stream, options);
+        this.recordRTC.onStateChanged = this.onRecorderStateChanged.bind(this);
+        this.isRecording = true;
+        this.showNewVideoButton = false;
+        // showing video stream as html element
+        this.videoElement.src = window.URL.createObjectURL(stream);
+        // hiding video element controls while recording
+        this.toggleControls();
+        // show timer before recording, then start recording
         this.showTimer().then(() => {
-            const options = {
-                mimeType: 'video/webm\;codecs=vp8', // or video/webm\;codecs=h264 or video/webm\;codecs=vp9
-                bitsPerSecond: 512000
-            };
-            this.stream = stream;
-            this.recordRTC = RecordRTC(stream, options);
-            this.recordRTC.onStateChanged = this.onRecorderStateChanged.bind(this);
-            // start of recording video
+            if (this.timeLimit) {
+                this.setRecordingTimeLimit();
+            }
             this.recordRTC.startRecording();
-            this.isRecording = true;
-            this.showNewVideoButton = false;
-            // showing video stream as html element
-            this.videoElement.src = window.URL.createObjectURL(stream);
-            // hiding video element controls while recording
-            this.toggleControls();
         });
     }
 
-    public onRecorderStateChanged(currentRecorderState: RecorderState): void {
+    private setRecordingTimeLimit() {
+        this.recordRTC.setRecordingDuration(this.timeLimit, (data) => {
+            this.pauseRecording();
+            this.processVideo(data);
+        });
+    }
+
+    private onRecorderStateChanged(currentRecorderState: RecorderState): void {
         this.recorderState = currentRecorderState;
     }
 
-    public errorCallback(error: any): void {
+    private errorCallback(error: any): void {
         alert('Unable to capture your camera. Please check console logs.');
         console.error(error);
     }
 
-    public processVideo(audioVideoWebMURL): void {
+    private processVideo(audioVideoWebMURL): void {
         // show recorded result in video html element
         this.videoElement.src = audioVideoWebMURL;
         this.videoElement.muted = false;
@@ -130,7 +144,7 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
         }
     }
 
-    public stopRecording(): Promise<any> {
+    private stopRecording(): Promise<any> {
         return new Promise<any>((videoStopped) => {
             this.isPaused = false;
             // process video after stop recording
@@ -171,7 +185,7 @@ export class VideoPlayerComponent implements OnInit, AfterViewInit {
         this.stopRecording().then(() => this.recordRTC.save(this.fileTitle + '.' + this.fileExtension));
     }
 
-    public showTimer(): Promise<any> {
+    private showTimer(): Promise<any> {
         return new Promise<any>((timerIsShown) => {
             this.showTimerCaption = true;
             let index = 0;

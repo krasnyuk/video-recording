@@ -66,6 +66,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatSelectModule} from '@angular/material/select';
+import {VideoPlayerSettingsService} from './services/video-player-settings.service';
 
 @NgModule({
     imports: [
@@ -134,7 +135,8 @@ import {MatSelectModule} from '@angular/material/select';
         AccountService,
         AccountEndpoint,
         LocalStoreManager,
-        EndpointFactory
+        EndpointFactory,
+        VideoPlayerSettingsService
     ],
     bootstrap: [AppComponent]
 })

@@ -3,8 +3,8 @@
         <mat-card-title>Video duration time</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-        <mat-radio-group class="time-radio-group" [(ngModel)]="selectedTime">
-            <mat-radio-button *ngFor="let time of timeConfigs" class="time-radio-button" [value]="time">{{time}}</mat-radio-button>
+        <mat-radio-group (change)="onDurationChange()" class="time-radio-group" [(ngModel)]="selectedDuration">
+            <mat-radio-button *ngFor="let time of timeConfig" class="time-radio-button" [value]="time.value">{{time.caption}}</mat-radio-button>
         </mat-radio-group>
     </mat-card-content>
 </mat-card>
